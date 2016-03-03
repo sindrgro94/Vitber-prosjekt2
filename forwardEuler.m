@@ -1,5 +1,5 @@
 %% kj?rer hele forward euler
-function forwardEuler(timestep,xPosStart,yPosStart,xVelStart, yVelStart,...
+function [xPos,yPos,xVel,yVel]= forwardEuler(timestep,xPosStart,yPosStart,xVelStart, yVelStart,...
     Vdc,Vac,omega,r0,q,mass,totalTime)
 
 totPoints = totalTime/timestep;
@@ -22,9 +22,7 @@ for time=0:timestep:totalTime
         (timestep,xPos(count-1),yPos(count-1),xVel(count-1),yVel(count-1),...
         Vdc,Vac,omega,time,r0,q,mass);
 end
-hyperbolicPotentialAndField
-hold on
-plot(xPos*10^3,yPos*10^3,'r');
+%%plot(xPos*10^3,yPos*10^3,'r');
 
 
 end

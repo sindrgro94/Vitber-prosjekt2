@@ -4,7 +4,9 @@ V_AC = 0; %0V
 r0   = 3; %3mm
 l = 0.1; %steglengde for meshgrid
 A = 0.01;
-[X,Y] = meshgrid(-2*r0:l:2*r0,-2*r0:l:2*r0); %%opprett meshgrip for surface plot
+x = linspace(-2*r0,2*r0,100);
+y = x;
+[X,Y] = meshgrid(x,y); %%opprett meshgrip for surface plot
 V = V_DC.*(X.^2-Y.^2)./((r0)^2); %% f? verdier for V(x,y)
 figure(1); %% opprett figur
 surf(X,Y,V); %%plot surface V = V(x,y)
@@ -30,5 +32,5 @@ V_tot = V1+V2+V3+V4;
 figure(3);
 contour(V_tot,30);
 
-% figure(4);
-% streamslice(X,Y,E_x_tot,E_y_tot);
+ figure(4);
+ streamslice(x,y,E_x_tot,E_y_tot,10);
