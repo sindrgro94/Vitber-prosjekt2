@@ -24,7 +24,7 @@ for time=0:timestep:totalTime
 end
 hyperbolicPotentialAndField
 hold on
-plot(xPos,yPos,'r');
+plot(xPos*10^3,yPos*10^3,'r');
 
 
 end
