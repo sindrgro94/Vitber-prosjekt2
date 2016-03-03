@@ -2,19 +2,18 @@ function hyperbolicPotentialAndField
 V_DC = 5; %5V
 V_AC = 0; %0V
 r0   = 3; %3mm
-l = 0.1; %steglengde for meshgrid
 A = 0.01;
 x = linspace(-2*r0,2*r0,100);
 y = x;
 [X,Y] = meshgrid(x,y); %%opprett meshgrip for surface plot
 V = V_DC.*(X.^2-Y.^2)./((r0)^2); %% f? verdier for V(x,y)
 figure(1); %% opprett figur
-surf(X,Y,V); %%plot surface V = V(x,y)
+contour(V,30); %%plot contour of V = V(x,y)
 colorbar; %%vis colorbar (kanskje un?dvendig!)
 [E_x,E_y] = gradient(-V);
 figure(2);
 hold on;
-streamslice(X,Y,E_x,E_y,'LineColor','k');
+streamslice(X,Y,E_x,E_y,10);
 x_Charge = [-r0,0,0,r0];
 y_Charge = [0,r0,-r0,0];
 plot([x_Charge(1),x_Charge(4)],[y_Charge(1),y_Charge(4)],'O','Color','k',...
