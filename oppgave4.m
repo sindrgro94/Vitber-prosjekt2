@@ -17,6 +17,7 @@ mass = 28*1.660539040*10^(-27);
 totalTime = lengde/zVelStart;
 [xPos,yPos,xVel,yVel]= forwardEuler(timestep, xPosStart, yPosStart, xVelStart, yVelStart, Vdc, Vac, omega, r0, q, mass, totalTime);
 
+
 t = 0:timestep:totalTime;
 zPos = t*zVelStart; %Bestemmer z(t)
 
