@@ -1,7 +1,9 @@
 %% forward Euler
-function [xPos,yPos] = forwardEuler(steplength,xStart,yStart)
-    number = 2;
-    xPos(1)=xStart;
-    yPos(1)=yStart;
+function [xPos,yPos,xVel,yVel] = forwardEuler(timestep,xPosStart,yPosStart,...
+    xVelStart, yVelStart,xAccStart,yAccStart)
     
+xPos = xPosStart + timestep*calculatePosition(xPosStart,xVelStart,xAccStart);
+yPos = yPosStart + timestep*calculatePosition(yPosStart,yVelStart,yAccStart);
+xVel = xVelStart + timestep*calculateVelocity(xPosStart,xVelStart,xAccStart);
+yVel = yVelStart + timestep*calculateVelocity(xPosStart,xVelStart,xAccStart);
 end
