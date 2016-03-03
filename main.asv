@@ -1,0 +1,3 @@
+%%Mainfila
+plot(t,x,'r')
+plot(plot(t,xPos(1:length(t))
