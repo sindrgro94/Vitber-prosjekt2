@@ -22,7 +22,9 @@ for time=0:timestep:totalTime
         (timestep,xPos(count-1),yPos(count-1),xVel(count-1),yVel(count-1),...
         Vdc,Vac,omega,time,r0,q,mass);
 end
-plot(xPos,yPos);
+hyperbolicPotentialAndField
+hold on
+plot(xPos,yPos,'r');
 
 
 end
