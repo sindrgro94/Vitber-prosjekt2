@@ -1,5 +1,5 @@
-%% forward Euler
-function [xPos,yPos,xVel,yVel] = forwardEulerOnestep(timestep,xPosStart,yPosStart,...
+%% forward EulerOneStep
+function [xPos,yPos,xVel,yVel] = forwardEulerOneStep(timestep,xPosStart,yPosStart,...
     xVelStart, yVelStart,Vdc,Vac,omega,t,r0,q,mass)
     
 xPos = xPosStart + timestep*xVelStart;
