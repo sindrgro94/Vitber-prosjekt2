@@ -1,5 +1,5 @@
 %%Mainfila
-timestep = 0.003 * 10^(-7);
+timestep = 0.003*
 xPosStart = 1*10^(-3);
 yPosStart = 0;
 xVelStart = 0;
@@ -9,7 +9,7 @@ Vac = 0;
 omega = 0;
 r0 = 0.0030;
 q = 1.60217657*10^(-19);
-mass = 28*1.660539040*10^(-27);
+mass = 
 totalTime = 20*10^(-6);
 [xPos,yPos,xVel,yVel]= forwardEuler(timestep, xPosStart, yPosStart, xVelStart, yVelStart, Vdc, Vac, omega, r0, q, mass, totalTime);
 t = 0:timestep:20*10^-6;
