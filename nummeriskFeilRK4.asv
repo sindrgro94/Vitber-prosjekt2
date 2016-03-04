@@ -1,5 +1,5 @@
 %Evaluering av nummerisk feil
-
+function [feil_RK4,xPos] = nummeriskFeilRK4()
 timestep = 0.003 * 10^(-7);
 xPosStart = 1*10^(-3);
 yPosStart = 0;
@@ -22,6 +22,7 @@ xPos = zeros(1,totPoints);
 yPos = zeros(1,totPoints);
 xVel = zeros(1,totPoints);
 yVel = zeros(1,totPoints);
+feil_RK4 = zeros(1,totPoints);
 x = zeros(1,totPoints);
 count = 1;
 %%Startverdier
@@ -35,12 +36,9 @@ for time=0:timestep:totalTime
     [xPos(count),xVel(count),yPos(count),yVel(count)] = RK4Step(timestep,xPos(count-1),yPos(count-1),xVel(count-1),yVel(count-1),...
         Vdc,Vac,omega,time,r0,q,mass);
     x(count) = xPosStart*cos(sqrt(Vdc*2*q/(mass*r0^2))*time);
-    feil(count) = abs(x(count)-xPos(count));
+    feil_RK4(count) = abs(x(count)-xPos(count));
 end
 
-
-
-
-%plot(xPos,yPos,'r');
+t = 0:timestep:totalTime
 
 

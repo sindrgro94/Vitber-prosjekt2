@@ -1,6 +1,5 @@
 %Evaluering av nummerisk feil
 function [feil_RK4,xPos] = nummeriskFeilRK4()
-[timestep,xPosStart,yPosStart,xVelStart, yVelStart,zVelStart,Vdc,Vac,omega,r0,q,mass,totalTime] = getVariables();
 timestep = 0.003 * 10^(-7);
 xPosStart = 1*10^(-3);
 yPosStart = 0;
@@ -23,6 +22,7 @@ xPos = zeros(1,totPoints);
 yPos = zeros(1,totPoints);
 xVel = zeros(1,totPoints);
 yVel = zeros(1,totPoints);
+feil_RK4 = zeros(1,totPoints);
 x = zeros(1,totPoints);
 count = 1;
 %%Startverdier
@@ -38,6 +38,14 @@ for time=0:timestep:totalTime
     x(count) = xPosStart*cos(sqrt(Vdc*2*q/(mass*r0^2))*time);
     feil_RK4(count) = abs(x(count)-xPos(count));
 end
+
+t = 0:timestep:totalTime;
+plot(t,xPos(1:length(t)))
+plot(t,x(1:length(t)))
+figure()
+plot(t,feil_RK4(1:length(t)))
+figure()
+loglog(t,feil_RK4(1:length(t)))
 
 
 
