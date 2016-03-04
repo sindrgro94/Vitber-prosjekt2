@@ -12,6 +12,7 @@ yVelStart = 0;
 r0 = 0.003;
 q = 1.60217657*10^(-19);
 mass = 28*1.660539040*10^(-27);
+totalTime = lengde/zVelStart;
 count = 1;
 for Vdc = 1:voltageStep:10
     for Vac = 5:voltageStep:60
