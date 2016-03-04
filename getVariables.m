@@ -1,11 +1,11 @@
 %%%funksjon som returnerer riktige variable:
 function [timestep,xPosStart,yPosStart,xVelStart, yVelStart,...
-    zVelStart,Vdc,Vac,omega,r0,q,mass,totalTime] = getVariables()
+    zVelStart,Vdc,Vac,omega,r0,q,mass,totalTime,lengde] = getVariables()
 lengde = 0.1;
 zVelStart = 5000;
 Vac = 45;
 omega = 10^7;
-timestep = 3 * 10^(-7);
+timestep = 3 * 10^(-10);
 xPosStart = 1*10^(-3);
 yPosStart = 1*10^(-3);
 xVelStart = 0;

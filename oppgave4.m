@@ -1,5 +1,5 @@
 %Oppgave 4
-function oppgave4(lengde, zVelStart,Vac,omega)
+function oppgave4()
 %lengde = 0.1;
 %zVelStart = 5000;
 %Vac = 45;
@@ -15,7 +15,7 @@ function oppgave4(lengde, zVelStart,Vac,omega)
 %mass = 28*1.660539040*10^(-27);
 %totalTime = lengde/zVelStart;
 [timestep,xPosStart,yPosStart,xVelStart, yVelStart,...
-    zVelStart,Vdc,Vac,omega,r0,q,mass,totalTime] = getVariables();
+    zVelStart,Vdc,Vac,omega,r0,q,mass,totalTime,lengde] = getVariables();
 
 [xPos,yPos,xVel,yVel]= forwardEuler(timestep, xPosStart, yPosStart, xVelStart, yVelStart, Vdc, Vac, omega, r0, q, mass, totalTime);
 
