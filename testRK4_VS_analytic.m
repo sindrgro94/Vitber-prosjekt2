@@ -15,5 +15,5 @@ xPos= RK4(timestep, xPosStart, yPosStart, xVelStart, yVelStart, Vdc, Vac, omega,
 t = 0:timestep:20*10^-6;
 x = xPosStart*cos(sqrt(Vdc*2*q/(mass*r0^2))*t);
 hold on
-plot(t,x,'r');
+%plot(t,x,'r');
 plot(t,xPos(1:length(t)));
