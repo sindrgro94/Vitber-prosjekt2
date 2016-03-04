@@ -1,7 +1,5 @@
 function [feil_Euler,xPos] = nummeriskFeilEuler()
-
-
-
+[] = getVariables()
 totPoints = uint32(totalTime/timestep);
 %%u = 1.660539040*10^(-27)
 %%e = 1.60217657*10^(-19) 

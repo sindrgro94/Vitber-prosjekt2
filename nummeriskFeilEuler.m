@@ -1,4 +1,5 @@
-
+function [feil_Euler,xPos] = nummeriskFeilEuler()
+[timestep,xPosStart,yPosStart,xVelStart, yVelStart,zVelStart,Vdc,Vac,omega,r0,q,mass,totalTime] = getVariables();
 totPoints = uint32(totalTime/timestep);
 %%u = 1.660539040*10^(-27)
 %%e = 1.60217657*10^(-19) 
@@ -23,4 +24,5 @@ for time=0:timestep:totalTime
     feil_Euler(count) = abs(x(count)-xPos(count));
 end
 
-plot(t,feil_Euler(1:length(t)))
+%plot(t,feil_Euler(1:length(t)))
+end

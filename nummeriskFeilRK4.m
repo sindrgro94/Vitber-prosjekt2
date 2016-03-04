@@ -1,6 +1,6 @@
 %Evaluering av nummerisk feil
 function [feil_RK4,xPos] = nummeriskFeilRK4()
-[] = getVariables()
+[timestep,xPosStart,yPosStart,xVelStart, yVelStart,zVelStart,Vdc,Vac,omega,r0,q,mass,totalTime] = getVariables();
 timestep = 0.003 * 10^(-7);
 xPosStart = 1*10^(-3);
 yPosStart = 0;
