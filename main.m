@@ -1,5 +1,5 @@
 %%Mainfila
-alternative = menu('Hva vil du gj?re?','Teste Euler mot Analytisk l?sning');
+alternative = menu('Hva skal testes?','Teste Euler mot Analytisk');
 switch alternative
     case 1
     testEulerVSAnalytic;
