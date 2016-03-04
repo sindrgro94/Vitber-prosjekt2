@@ -17,4 +17,4 @@ x = xPosStart*cos(sqrt(Vdc*2*q/(mass*r0^2))*t);
 
 plot(t,x,'+');
 hold on
-plot(t,xPos(1:length(t)),'O');
+plot(t,xPos(1:length(t)),'O','b);

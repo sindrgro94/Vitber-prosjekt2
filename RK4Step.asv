@@ -1,11 +1,11 @@
 %RK4
-function [xPos, = RK4Step(timestep,xPosStart,yPosStart,...
+function [xPos,xVel] = RK4Step(timestep,xPosStart,yPosStart,...
     xVelStart, yVelStart,Vdc,Vac,omega,t,r0,q,mass)
-h = timestep;
-s1 = xVelStart + t*electricForceX(Vdc,Vac,omega,t,xPosStart,r0,q)/mass;
-s2 = xVelStart + (t+h/2)*electricForceX(Vdc,Vac,omega,t+h/2,xPosStart+h/2*s1,r0,q)/mass;
-s3 = xVelStart + (t+h/2)*electricForceX(Vdc,Vac,omega,t+h/2,xPosStart+h/2*s2,r0,q)/mass;
-s4 = xVelStart + (t+h)*electricForceX(Vdc,Vac,omega,t+h,xPosStart+h*s3,r0,q)/mass;
+h = timestep;     %dt             %a
+s1 = xVelStart + (h)*(electricForceX(Vdc,Vac,omega,t,xPosStart,r0,q)/mass);
+s2 = xVelStart + (h+h/2)*electricForceX(Vdc,Vac,omega,t+h/2,xPosStart+h/2*s1,r0,q)/mass;
+s3 = xVelStart + (h+h/2)*electricForceX(Vdc,Vac,omega,t+h/2,xPosStart+h/2*s2,r0,q)/mass;
+s4 = xVelStart + (h+h)*electricForceX(Vdc,Vac,omega,t+h,xPosStart+h*s3,r0,q)/mass;
 xPos = xPosStart + h/6*(s1+2*s2 + 2*s3 +s4);
-
+xVel = xVelStart + h*electricForceX(Vdc,Vac,omega,t,xPosStart,r0,q)/mass;
 end    

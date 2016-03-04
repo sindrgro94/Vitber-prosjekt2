@@ -23,7 +23,7 @@ for time=0:timestep:totalTime
         Vdc,Vac,omega,time,r0,q,mass);
 
 end
-plot(xPos,yPos,'r');
+%plot(xPos,yPos,'r');
 
 
 end
