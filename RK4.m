@@ -1,5 +1,5 @@
 %% kj?rer hele forward euler
-function xPos= RK4(timestep,xPosStart,yPosStart,xVelStart, yVelStart,...
+function [xPos,yPos] = RK4(timestep,xPosStart,yPosStart,xVelStart, yVelStart,...
     Vdc,Vac,omega,r0,q,mass,totalTime)
 
 totPoints = uint32(totalTime/timestep)+1;
@@ -19,7 +19,7 @@ yVel(count) = yVelStart;
 
 for time=0:timestep:totalTime
     count = count+1;
-    [xPos(count),xVel(count)] = RK4Step(timestep,xPos(count-1),yPos(count-1),xVel(count-1),yVel(count-1),...
+    [xPos(count),xVel(count),yPos(count),yVel(count)] = RK4Step(timestep,xPos(count-1),yPos(count-1),xVel(count-1),yVel(count-1),...
         Vdc,Vac,omega,time,r0,q,mass);
 
 end
