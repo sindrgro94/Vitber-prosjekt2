@@ -2,7 +2,7 @@
 function [tidsstegRK4,tidsstegEuler]=setTimestep()
 
 count = 1;
-for i = 7:0.5:10
+for i = 7:0.5:12
     tic
     timestep = 10^(-i);
     %finner nummerisk feil for alle posisjoner 
@@ -28,7 +28,7 @@ toc
 end
 
 
-t = 7:0.5:10;
+t = 7:0.5:12;
 % relErrorEuler = relErrorEuler;
 % relErrorRK4 = relErrorRK4;
 hold on
