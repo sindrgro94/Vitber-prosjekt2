@@ -5,7 +5,7 @@ xPosStart = 1*10^(-3);
 yPosStart = 0;
 xVelStart = 0;
 yVelStart = 0;
-Vdc = 5;
+Vdc = 3.2222;
 Vac = 0;
 omega = 0;
 r0 = 0.0030;
@@ -38,11 +38,11 @@ for time=0:timestep:totalTime
     feil_Euler(count) = abs(x(count)-xPos(count));
 end
 t = 0:timestep:totalTime;
-hold on
-plot(t,xPos(1:length(t)))
+% hold on
+% plot(t,xPos(1:length(t)))
 plot(t,x(1:length(t)))
-figure()
-plot(t,feil_Euler(1:length(t)))
+% figure()
+% plot(t,feil_Euler(1:length(t)))
 figure()
 loglog(t,feil_Euler(1:length(t)))
 end
