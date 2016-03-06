@@ -2,7 +2,7 @@
 function [tidsstegRK4,tidsstegEuler]=setTimestep()
 
 count = 1;
-for i = 7:0.5:11
+for i = 7:0.5:10
     tic
     timestep = 10^(-i);
     %finner nummerisk feil for alle posisjoner 
@@ -28,9 +28,13 @@ toc
 end
 
 
-t = 7:0.5:11;
+t = (7:0.5:10);
+relErrorEuler = log10(relErrorEuler);
+relErrorRK4 = log10(relErrorRK4);
 % relErrorEuler = relErrorEuler;
 % relErrorRK4 = relErrorRK4;
 hold on
 plot(t,relErrorEuler)
 plot(t,relErrorRK4,'r')
+
+%Funnet at minste timestep = 10^(-11.5) = 3.1623*10^(-12)

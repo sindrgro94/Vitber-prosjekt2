@@ -28,7 +28,12 @@ toc
 end
 
 
-t = 7:0.5:9;
-relErrorEuler = log(relErrorEuler);
-relErrorRK4 = log(relErrorR);
+t = log10(7:0.5:9);
+relErrorEuler = log10(
+% relErrorEuler = relErrorEuler;
+% relErrorRK4 = relErrorRK4;
+hold on
 plot(t,relErrorEuler)
+plot(t,relErrorRK4,'r')
+
+%Funnet at minste timestep = 10^(-11.5) = 3.1623*10^(-12)

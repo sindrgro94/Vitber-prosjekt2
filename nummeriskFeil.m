@@ -67,7 +67,7 @@ for time=0:timestep:totalTime
     feil_RK4(count) = abs(xAnalytic(count)-xPos(count));
 end
 
-% t = 0:timestep:totalTime;
+ t = 0:timestep:totalTime;
 
 % hold on
 % plot(t,xPos(1:length(t)))
@@ -81,17 +81,11 @@ end
 % plot(t,x(1:length(t)),'r')
 % figure()
 % plot(t,feil_Euler(1:length(t)))
+hold on
+ loglog(t,feil_Euler(1:length(t)),'r')
+ loglog(t,feil_RK4(1:length(t)))
 
-% figure()
 
-% loglog(t,feil_Euler(1:length(t)),'r')
-% ylim([0,0.1])
-% figure()
-% loglog(t,feil_RK4(1:length(t)))
-% ylim([0,0.1])
-
-% figure()
-% loglog(t,feil_RK4(1:length(t)),'r')
 
 
 
