@@ -8,16 +8,12 @@ function success = RK4success(timestep,xPosStart,yPosStart,...
 %     [xPos,yPos,xVel,yVel]= forwardEuler(timestep,xPosStart,yPosStart,xVelStart, yVelStart,...
 %     Vdc,Vac,omega,r0,q,mass,totalTime);
     l = length(xPos);
+    pos = sqrt(xPos(l)^2+yPos(l)^2);
     success = 1; %%godkjent inntil det motsatt er bevist
     for i = 1:l
-        pos = sqrt(xPos(i)^2+yPos(i)^2);
-        if (pos>r0)
-            success = 0;
-        end
-    end
+        if (xPos(i)>=r0 || 
     if success == 1
-        pos = sqrt(xPos(l)^2+yPos(l)^2);
-        if pos<=r0/2
+        if pos==r0/2
             success = 1;
         else
             success = 0;
