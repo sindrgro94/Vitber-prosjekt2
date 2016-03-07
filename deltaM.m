@@ -2,12 +2,12 @@
 function [masse] = deltaM()
 timestep = 10^-8;
 xPosStart = 1*10^(-3);
-yPosStart = 0;
+yPosStart = 1*10^-3;
 xVelStart = 0;
 yVelStart = 0;
 zVelStart = 5000;
-Vdc = 7; %for fem perioder kan vi bruke Vdc = 3.2222
-Vac = 45;
+Vdc = 5; %for fem perioder kan vi bruke Vdc = 3.2222
+Vac = 0;
 omega = 0;
 r0 = 0.0030;
 q = 1.60217657*10^(-19);
@@ -25,6 +25,7 @@ if thru == 1
     masse(count)=u*m;
 else
     gjennom(count)=0;
+    masse(count)=0;
 end
 toc
 end

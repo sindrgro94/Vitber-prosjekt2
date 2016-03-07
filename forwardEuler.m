@@ -2,7 +2,7 @@
 function [xPos,yPos,xVel,yVel]= forwardEuler(timestep,xPosStart,yPosStart,xVelStart, yVelStart,...
     Vdc,Vac,omega,r0,q,mass,totalTime)
 
-totPoints = uint32(totalTime/timestep);
+totPoints = uint64(totalTime/timestep);
 %%u = 1.660539040*10^(-27)
 %%e = 1.60217657*10^(-19) 
 %%Preallokering

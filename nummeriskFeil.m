@@ -69,21 +69,21 @@ end
 
  t = 0:timestep:totalTime;
 
-% hold on
+  hold on
 % plot(t,xPos(1:length(t)))
 % plot(t,xAnalytic(1:length(t)))
 % figure()
-% plot(t,feil_RK4(1:length(t)),'g')
+ plot(t,feil_RK4(1:length(t)),'g')
 % 
 % hold on
 % figure()
 % plot(t,xPosEuler(1:length(t)),'r')
 % plot(t,x(1:length(t)),'r')
 % figure()
-% plot(t,feil_Euler(1:length(t)))
-hold on
- loglog(t,feil_Euler(1:length(t)),'r')
- loglog(t,feil_RK4(1:length(t)))
+ plot(t,feil_Euler(1:length(t)))
+% hold on
+%  loglog(t,feil_Euler(1:length(t)),'r')
+%  loglog(t,feil_RK4(1:length(t)))
 
 
 
