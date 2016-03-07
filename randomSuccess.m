@@ -1,10 +1,10 @@
-function prosentGjennom = randomSuccess(masse) %massen gis i "u"
+function prosentGjennom = randomSuccess(masse, N, Vdc, Vac) %massen gis i "u", N = antall partikler
 
 timestep = 10^-9;
 totalTime = 20*10^(-6);
 zVelStart = 5000;
-Vdc = 7.7; %for fem perioder kan vi bruke Vdc = 3.2222, optimal Vdc = 7.7
-Vac = 46.05; %Optimal Vac = 46.05
+%Vdc = 7.6; %for fem perioder kan vi bruke Vdc = 3.2222, optimal Vdc = 7.7
+%Vac = 46.05; %Optimal Vac = 46.05
 omega = 10^7;
 r0 = 0.0030;
 q = 1.60217657*10^(-19);
@@ -12,7 +12,7 @@ u = 1.660539040*10^(-27);
 mass = masse*u;
 
 
-N = 30; %Antall Partikler
+%N = 5; %Antall Partikler
 gjennom = zeros(1,N);
 gjennomAntall = 0;
 tic

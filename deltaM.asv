@@ -41,7 +41,7 @@ end
 
 end
 toc
-snitt = mean(masse);            %Snittmassen som kom gjennom
-deltam = abs(max(masse)-snitt); %Delta M, ikke helt korrekt
-plot(givenMass,gjennom)         %Plott av hvilket partikler som kom gjennom
+snitt = mean(masse);            %Snit
+deltam = abs(max(masse)-snitt);
+plot(givenMass,gjennom)
     
