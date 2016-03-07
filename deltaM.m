@@ -6,20 +6,21 @@ yPosStart = 1*10^-3;
 xVelStart = 0;
 yVelStart = 0;
 zVelStart = 5000;
-Vdc = 5; %for fem perioder kan vi bruke Vdc = 3.2222
-Vac = 0;
-omega = 0;
+Vdc = 7; %for fem perioder kan vi bruke Vdc = 3.2222
+Vac = 45;
+omega = 10^7;
 r0 = 0.0030;
 q = 1.60217657*10^(-19);
 %mass = 28*1.660539040*10^(-27);
 totalTime = 20*10^(-6);
 u = 1.660539040*10^(-27);
 count = 0;
-for m = 0:u:(60*u)
+for m = 0:1:60
     tic
+    mass = u*m;
     count = count +1;
    thru =  RK4success(timestep,xPosStart,yPosStart,...
-    xVelStart, yVelStart,zVelStart,Vdc,Vac,omega,r0,q,m,totalTime);
+    xVelStart, yVelStart,zVelStart,Vdc,Vac,omega,r0,q,mass,totalTime);
 if thru == 1
     gjennom(count) = 1;
     masse(count)=u*m;
