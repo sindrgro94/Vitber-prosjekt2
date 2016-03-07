@@ -20,7 +20,7 @@ yVel(count) = yVelStart;
 t = 0:timestep:totalTime;
 zPos = t*zVelStart; %Bestemmer z(t)
 
-for time=0:timestep:totalTime
+for time=timestep:timestep:totalTime
     count = count+1;
     [xPos(count),xVel(count),yPos(count),yVel(count)] = RK4Step(timestep,xPos(count-1),yPos(count-1),xVel(count-1),yVel(count-1),...
         Vdc,Vac,omega,time,r0,q,mass);

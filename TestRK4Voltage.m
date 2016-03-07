@@ -16,6 +16,6 @@ for Vdc = 1:voltageStep:10
     end
 end
 plot(xAxes,yAxes,'x');
-xlabel('Vdc');
-ylabel('Vac');
+ylabel('Vdc');
+xlabel('Vac');
 end
