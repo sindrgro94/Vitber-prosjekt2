@@ -2,13 +2,13 @@
 function TestRK4Voltage()
 [timestep,xPosStart,yPosStart,xVelStart, yVelStart,...
     zVelStart,Vdc,Vac,omega,r0,q,mass,totalTime] = getVariables();
-voltageStep = 0.5;
+voltageStep = 2;
 VacStart = 5;
 counter = 1;
 for Vdc = 1:voltageStep:10
     first = 1; %%optimalisering for ? slippe ? kj?re RK4 s? mange ganger
-    for Vac = VacStart:1:60
-        success = RK4success(timestep,xPosStart,yPosStart,...
+    for Vac = VacStart:voltageStep:60
+        success = RK4successStable(timestep,xPosStart,yPosStart,...
         xVelStart, yVelStart,zVelStart,Vdc,Vac,omega,r0,q,mass,totalTime);
         if success == 1
             yAxes(counter) = Vdc;
