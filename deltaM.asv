@@ -1,13 +1,18 @@
 %Funskjon for å bestemme deltaM
-function [masse] = deltaM()
-timestep = 10^-8;
+%denne funskjonen sier hvilket av verdier av massen gitt i u som kommer
+%gjennom sensoren. 
+%Den gir ut vektoren [masse] som gir alle massene som går gjennom
+%Den gir ut konstanten deltam som bestemmer delta m
+%Den gir ut konstanten snitt som er snitt av alle massene som kommer gjennom
+function [masse,deltam,snitt] = deltaM()
+timestep = 10^-9;
 xPosStart = 1*10^(-3);
 yPosStart = 1*10^-3;
 xVelStart = 0;
 yVelStart = 0;
 zVelStart = 5000;
-Vdc = 7.35; %for fem perioder kan vi bruke Vdc = 3.2222
-Vac = 46;
+Vdc = 7.7; %for fem perioder kan vi bruke Vdc = 3.2222, optimal Vdc = 7.7
+Vac = 46.05; %Optimal Vac = 46.05
 omega = 10^7;
 r0 = 0.0030;
 q = 1.60217657*10^(-19);
@@ -16,23 +21,26 @@ totalTime = 20*10^(-6);
 u = 1.660539040*10^(-27);
 count = 1;
 i = 1;
-for m = 10:0.1:40
-    tic
+tic
+for m = 27.7:0.05:28.2
     mass = u*m;
    thru =  RK4success(timestep,xPosStart,yPosStart,...
     xVelStart, yVelStart,zVelStart,Vdc,Vac,omega,r0,q,mass,totalTime);
 if thru == 1
     gjennom(i) = 1;
-    givenMass = mass
+    givenMass(i) = m;
     masse(count)=m;
     count = count +1;
     i = i+1;
 else
     gjennom(i)=0;
+    givenMass(i) = m;
     i =i+1;
 end
-toc
-end
 
-plot(gjennom)
+end
+toc
+snitt = mean(masse);
+deltam = abs(max(masse)-snitt);
+plot(givenMass,gjennom)
     
