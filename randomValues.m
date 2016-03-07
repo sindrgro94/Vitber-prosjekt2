@@ -1,5 +1,5 @@
 %Oppgave 8
-%bestemmer et tilfelig punkt 
+%Bestemmer tilfelige innverdier
 function [xPosStart,yPosStart,xVelStart,yVelStart] = randomValues(r0,zVelStart)
 r = rand(1)*r0/2;       %Tilfeldig radius
 theta = rand(1)*2*pi;   %Tilfelig vinkel theta

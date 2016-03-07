@@ -11,8 +11,6 @@ q = 1.60217657*10^(-19);
 u = 1.660539040*10^(-27);
 mass = masse*u;
 
-
-%N = 5; %Antall Partikler
 gjennom = zeros(1,N);
 gjennomAntall = 0;
 tic
