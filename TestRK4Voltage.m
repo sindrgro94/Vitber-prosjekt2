@@ -3,7 +3,6 @@ function TestRK4Voltage()
 [timestep,xPosStart,yPosStart,xVelStart, yVelStart,...
     zVelStart,Vdc,Vac,omega,r0,q,mass,totalTime] = getVariables();
 voltageStep = 0.5;
-mass = mass/2;
 VacStart = 5;
 counter = 1;
 for Vdc = 1:voltageStep:10
