@@ -1,3 +1,5 @@
+
+
 function prosentGjennom = randomSuccess(masse, N, Vdc, Vac) %massen gis i "u", N = antall partikler
 
 timestep = 10^-9;
