@@ -2,7 +2,7 @@
 function TestRK4Voltage()
 [timestep,xPosStart,yPosStart,xVelStart, yVelStart,...
     zVelStart,Vdc,Vac,omega,r0,q,mass,totalTime] = getVariables();
-voltageStep = 0.5; %%figur har kj?rt med 0.05
+voltageStep = 2;
 VacStart = 5;
 counter = 1;
 for Vdc = 1:voltageStep:10
@@ -27,5 +27,5 @@ ylabel('Vdc');
 xlabel('Vac');
 xlim([5 60]);
 ylim([1 10]);
-plotTestRK4Voltage(xAxes,yAxes);
+plotTestRK4Voltage(xAxes,yAxes)
 end
