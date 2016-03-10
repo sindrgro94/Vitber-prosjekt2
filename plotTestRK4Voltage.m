@@ -27,5 +27,5 @@ ylabel('Vdc');
 xlabel('Vac');
 xlim([5 60]);
 ylim([1 10]);
-%saveTightFigure(h,'Stabilitets-diagram');
+saveTightFigure(h,'Stabilitets-diagram_halvMasse');
 end
