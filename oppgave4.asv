@@ -2,14 +2,14 @@
 function oppgave4(lengde, zVelStart,Vac,omega)
 lengde = 0.1;
 zVelStart = 5000;
-Vac = 45;
+Vac = 55.5;
 omega = 10^7;
-timestep =  10^(-11.5);
+timestep =  10^(-9);
 xPosStart = 1*10^(-3);
 yPosStart = 1*10^(-3);
 xVelStart = 0;
 yVelStart = 0;
-Vdc = 5;
+Vdc = 1.5;
 r0 = 0.003;
 q = 1.60217657*10^(-19);
 mass = 28*1.660539040*10^(-27);
@@ -34,16 +34,18 @@ xlabel('x')
 xlim([-r0,r0])
 zlabel('z')
 
-figure();
+xz = figure(2);
 plot(xPos(1:length(t)),zPos)
 xlabel('x')
 ylabel('z')
 xlim([-r0,r0])
-figure();
+yz = figure(3)
 plot(yPos(1:length(t)),zPos)
 xlabel('y')
 ylabel('z')
 xlim([-r0,r0])
 
+saveTightFigure(xz,'z(x)')
+saveTightFigure(yz,'z(x)')
 
 
