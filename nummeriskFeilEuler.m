@@ -38,11 +38,11 @@ for time=0:timestep:totalTime
     feil_Euler(count) = abs(x(count)-xPosEuler(count));
 end
 t = 0:timestep:totalTime;
-% hold on
-% plot(t,xPosEuler(1:length(t)))
-% plot(t,x(1:length(t)))
+hold on
+plot(t,xPosEuler(1:length(t)))
+plot(t,x(1:length(t)))
 % figure()
 % plot(t,feil_Euler(1:length(t)))
 % figure()
- loglog(t,feil_Euler(1:length(t)))
+% loglog(t,feil_Euler(1:length(t)))
 end

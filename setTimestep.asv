@@ -1,7 +1,7 @@
 %bestemme nummerisk feil
 function [tidsstegRK4,tidsstegEuler]=setTimestep()
 start = 7;
-slutt = 12;
+slutt = 9.5;
 count = 1;
 for i = start:0.5:slutt
     tic
@@ -38,12 +38,8 @@ hold on
 plot(t,relErrorEuler)
 plot(t,relErrorRK4,'r')
 xlim([start,slutt])
-set(gca,'FontSize',12);
-xlabel('log(x)')
-ylabel('log(y)')
-title('Feil som funksjon av tidsteget')
-legend('Feil Euler','Feil RK4')
-
+xlabel('log(error)')
+ylabel('log(x)
 
 
 %Funnet at minste timestep = 10^(-11.5) = 3.1623*10^(-12)
