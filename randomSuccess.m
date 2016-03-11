@@ -33,6 +33,6 @@ toc
 prosentGjennom = gjennomAntall/N;
 
 %%%For plotting
-% t = 1:N;
-% plot(t,gjennom,'xr');
-% ylim([-0.5,1.5])
+ t = 1:N;
+ plot(t,gjennom,'xr');
+ ylim([-0.5,1.5])

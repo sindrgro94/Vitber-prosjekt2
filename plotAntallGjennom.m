@@ -3,11 +3,11 @@
 function plotAntallGjennom()
 prosentGjennom=zeros(1,3);
 j = 1;
-for i = 27:1:29
+for i = 27:0.1:29
     prosentGjennom(j) = randomSuccess(i,5,7.65,46);
     j = j+1;
 end
 
-t = 27:1:29;
+t = 27:0.1:29;
 plot(t,prosentGjennom) %Plotter prosentandelen som kom frem til sensoren
 ylim([0,1])

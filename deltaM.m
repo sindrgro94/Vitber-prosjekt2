@@ -12,8 +12,8 @@ yPosStart = 1*10^-3;
 xVelStart = 0;
 yVelStart = 0;
 zVelStart = 5000;
-Vdc = 7; %for fem perioder kan vi bruke Vdc = 3.2222, optimal Vdc = 7.7
-Vac = 45; %Optimal Vac = 46.05
+Vdc = 7.6; %for fem perioder kan vi bruke Vdc = 3.2222, optimal Vdc = 7.7
+Vac = 46.05; %Optimal Vac = 46.05
 omega = 10^7;
 r0 = 0.0030;
 q = 1.60217657*10^(-19);
@@ -23,7 +23,7 @@ u = 1.660539040*10^(-27);
 count = 1;
 i = 1;
 tic
-for m = 25:1:35 %Verdier rundt Vdc = 7.7 og Vac = 46.05 m = 27.7:0.05:28.2
+for m = 25:.1:35 %Verdier rundt Vdc = 7.7 og Vac = 46.05 m = 27.7:0.05:28.2
     mass = u*m;
    thru =  RK4success(timestep,xPosStart,yPosStart,...
     xVelStart, yVelStart,zVelStart,Vdc,Vac,omega,r0,q,mass,totalTime); %Bestemmer om partikkel med gitt masse kommer gjennom
