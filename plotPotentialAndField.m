@@ -14,7 +14,12 @@ y_Charge = [0,r0,-r0,0]; %%....
 f1 = figure(1); %% konturplot for hyperbolsk potensial
 V = V_DC.*(X.^2-Y.^2)./((r0)^2); %% f? verdier for V(x,y) hyperbolsk
 contour(V,30); %%plot contour of V = V(x,y)
-colorbar; %%vis colorbar (kanskje un?dvendig!)
+ hold on;
+plot([50,150],[100,100],'O','Color','k',...
+    'MarkerSize',20); %%plotter ladningene langs x-aksen
+plot([100,100],[150,50],'O','Color','k',...
+    'MarkerSize',20); %%plotter ladningene langs y-asken
+%colorbar; %%vis colorbar (kanskje un?dvendig!)
 box off;
 set(gca,'visible','off');
 saveTightFigure(f1,'konturHyperbolsk.pdf');
@@ -23,7 +28,7 @@ saveTightFigure(f1,'konturHyperbolsk.pdf');
 f2 = figure(2); %%feltlinjer for hyperbolsk elektrisk felt
 hold on;
 [E_x,E_y] = gradient(-V);
-streamslice(X,Y,E_x,E_y,5);
+streamslice(X,Y,E_x,E_y,3);
 plot([x_Charge(1),x_Charge(4)],[y_Charge(1),y_Charge(4)],'O','Color','k',...
     'MarkerSize',20); %% plotter ladningene langs x-aksen (som 'O')
 plot([x_Charge(2),x_Charge(3)],[y_Charge(2),y_Charge(3)],'O','Color','k',...
@@ -48,7 +53,7 @@ saveTightFigure(f3,'konturKvadrupol.pdf')
 %--------------------------------------------------------------------%
 
 f4 = figure(4); %%feltlinjer for kvadrupolens elektriske felt (E ~1/r)
- streamslice(x,y,E_x_tot,E_y_tot,5);
+ streamslice(x,y,E_x_tot,E_y_tot,3);
  hold on;
 plot([x_Charge(1),x_Charge(4)],[y_Charge(1),y_Charge(4)],'O','Color','k',...
     'MarkerSize',20); %%plotter ladningene langs x-aksen
