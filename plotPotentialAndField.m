@@ -2,7 +2,7 @@ function plotPotentialAndField
 V_DC = 5; %5V
 V_AC = 0; %0V
 r0   = 3; %3mm
-A = 0.01; % vilkårlig amplitude for kvadrupolens potensialer.
+A = 0.01; % vilkårlig positiv konstant for kvadrupolens potensialer.
 x = linspace(-2*r0,2*r0,200); %%x-vektor for plot
 y = x; %y-vektor for plot
 [X,Y] = meshgrid(x,y); %%opprett meshgrip for surface plot
@@ -22,7 +22,7 @@ plot([100,100],[150,50],'O','Color','k',...
 %colorbar; %%vis colorbar (kanskje un?dvendig!)
 box off;
 set(gca,'visible','off');
-saveTightFigure(f1,'konturHyperbolsk.pdf');
+%saveTightFigure(f1,'konturHyperbolsk.pdf');
 %--------------------------------------------------------------------%
 
 f2 = figure(2); %%feltlinjer for hyperbolsk elektrisk felt
@@ -34,7 +34,7 @@ plot([x_Charge(1),x_Charge(4)],[y_Charge(1),y_Charge(4)],'O','Color','k',...
 plot([x_Charge(2),x_Charge(3)],[y_Charge(2),y_Charge(3)],'O','Color','k',...
     'MarkerSize',20); %% plotter ladningene langs y-aksen (som 'O')
 set(gca,'visible','off');
-saveTightFigure(f2,'feltlinjerHyperbolsk.pdf')
+%saveTightFigure(f2,'feltlinjerHyperbolsk.pdf')
 
 %--------------------------------------------------------------------%
 
@@ -48,7 +48,7 @@ V_tot = V1+V2+V3+V4; %%bruker superposisjon av potensialet
 contour(V_tot,30);
 box off;
 set(gca,'visible','off');
-saveTightFigure(f3,'konturKvadrupol.pdf')
+%saveTightFigure(f3,'konturKvadrupol.pdf')
 
 %--------------------------------------------------------------------%
 
@@ -60,7 +60,7 @@ plot([x_Charge(1),x_Charge(4)],[y_Charge(1),y_Charge(4)],'O','Color','k',...
 plot([x_Charge(2),x_Charge(3)],[y_Charge(2),y_Charge(3)],'O','Color','k',...
     'MarkerSize',20); %%plotter ladningene langs y-asken
 set(gca,'visible','off');
-saveTightFigure(f4,'feltlinjerKvadrupol.pdf')
+%saveTightFigure(f4,'feltlinjerKvadrupol.pdf')
 
 %--------------------------------------------------------------------%
 end
