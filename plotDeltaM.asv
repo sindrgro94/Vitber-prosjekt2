@@ -1,7 +1,7 @@
 %plotter bra og dårlige verdier for massen med Vac og Vdc
 function plotDeltaM()
-[givenMass, gjennom, masse,deltam,snitt] = deltaM(5,30,0.1, 3.85,23); %deltaM(10,40,0.1, 7.6,46.05);
-[givenMass1, gjennom1, masse1,deltam1,snitt1] = deltaM(5,30,0.1, 2.3,23); %deltaM(10,40,0.1, 4,35);
+[givenMass, gjennom, masse,deltam,snitt] = deltaM(5,25,0.1, 3.85,23); %deltaM(10,40,0.1, 7.6,46.05);
+[givenMass1, gjennom1, masse1,deltam1,snitt1] = deltaM(5,35,1, 2.3,23); %deltaM(10,40,0.1, 4,35);
 fig = figure();
 hold on
 plot(givenMass,gjennom)         %Plott av hvilket partikler som kom gjennom

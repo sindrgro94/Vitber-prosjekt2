@@ -81,11 +81,17 @@ end
 % % plot(t,x(1:length(t)),'r')
 % % figure()
 %  plot(t,feil_Euler(1:length(t)))
-%  hold on
-%  loglog(t,feil_Euler(1:length(t)),'r')
-%  %figure()
-%  loglog(t,feil_RK4(1:length(t)))
-
+ fig = figure(); 
+hold on
+ 
+  plot(t,feil_Euler(1:length(t)))
+  plot(t,feil_RK4(1:length(t)),'r')
+  set(gca,'FontSize',12);
+  xlabel('t')
+  ylabel('Absolutt feil')
+  title('Absolutt feil s.f.a. tiden')
+  legend('Euler','RK4')
+saveTightFigure(fig,'absoluttFeil')
 
 
 
